@@ -3,416 +3,418 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candela Fava - Curriculum Vitae</title>
-    
-    <!-- Google Fonts: Roboto & Material Symbols -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Candela Fava - CV</title>
+    <!-- Fuente Roboto de Google -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Iconos de Material Design de Google -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Roboto', 'sans-serif'],
-                    },
-                    colors: {
-                        google: {
-                            blue: '#1A73E8',
-                            red: '#EA4335',
-                            yellow: '#FBBC04',
-                            green: '#34A853',
-                            surface: '#F8F9FA',   // Light gray background
-                            border: '#DADCE0',    // Subtle border
-                            text: '#202124',      // Main text
-                            muted: '#5F6368',     // Secondary text
-                            hover: '#F1F3F4'      // Hover state
-                        }
-                    },
-                    boxShadow: {
-                        'material': '0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)',
-                        'material-hover': '0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15)'
-                    }
-                }
+    <style>
+        :root {
+            /* Colores de Google */
+            --google-blue: #4285F4;
+            --google-red: #EA4335;
+            --google-yellow: #FBBC05;
+            --google-green: #34A853;
+            --bg-color: #f8f9fa;
+            --text-main: #202124;
+            --text-secondary: #5f6368;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(#dadce0 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(to right, var(--google-blue) 25%, var(--google-red) 25%, var(--google-red) 50%, var(--google-yellow) 50%, var(--google-yellow) 75%, var(--google-green) 75%);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-top: 0;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .contact-item:hover {
+            color: var(--google-blue);
+        }
+
+        .action-buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Botón de WhatsApp */
+        .wa-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #25D366; 
+            color: white;
+            padding: 8px 16px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        /* Botón de Imprimir */
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--google-blue);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .wa-btn:hover, .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .wa-btn img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-icon-bg {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 150px;
+            color: #f1f3f4;
+            z-index: 0;
+            transform: rotate(-15deg);
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            color: var(--google-blue);
+            margin-top: 0;
+            border-bottom: 2px solid #f1f3f4;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .company-name {
+            color: var(--google-red);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .job-duration {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            display: inline-block;
+            background-color: #e8f0fe;
+            padding: 4px 12px;
+            border-radius: 16px;
+            color: var(--google-blue);
+            font-weight: 500;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .bullet-icon {
+            color: var(--google-yellow);
+            vertical-align: middle;
+            margin-right: 5px;
+            font-size: 1.2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--google-green);
+            font-weight: 500;
+        }
+
+        /* Suite Google Workspace destacada */
+        .google-workspace-box {
+            background: #ffffff;
+            border: 1px solid #dadce0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .gw-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .gw-icon {
+            font-size: 28px;
+        }
+        .gw-blue { color: var(--google-blue); }
+        .gw-red { color: var(--google-red); }
+        .gw-yellow { color: var(--google-yellow); }
+        .gw-green { color: var(--google-green); }
+
+        .gw-text h4 {
+            margin: 0 0 5px 0;
+            color: var(--text-main);
+        }
+        .gw-text p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 600px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .google-workspace-box {
+                flex-direction: column;
+                text-align: center;
             }
         }
-    </script>
-    <style>
-        body {
-            background-color: #F8F9FA;
-            color: #202124;
-            -webkit-font-smoothing: antialiased;
-            /* Patrón de puntos para un toque más ilustrado y de diseño */
-            background-image: radial-gradient(#DADCE0 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-        /* Ajuste de íconos Material */
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .icon-filled {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F1F3F4;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #DADCE0;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #BDC1C6;
+
+        /* =========================================
+           CONFIGURACIÓN ESPECIAL PARA IMPRESIÓN 
+           ========================================= */
+        @media print {
+            body {
+                background: white;
+                background-image: none; /* Quita el patrón de puntos */
+                color: black;
+            }
+            
+            .top-bar, .action-buttons, .card-icon-bg {
+                display: none !important; /* Oculta botones y elementos decorativos grandes */
+            }
+
+            .container {
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .card {
+                box-shadow: none; /* Quita sombras */
+                border: 1px solid #ddd; /* Pone un borde fino para separar */
+                padding: 20px;
+                margin-bottom: 15px;
+                page-break-inside: avoid; /* Evita que una tarjeta se corte a la mitad de la hoja */
+            }
+
+            .skill-item {
+                border: 1px solid #ddd;
+                border-left: 4px solid var(--google-green);
+            }
+
+            .job-duration {
+                border: 1px solid var(--google-blue);
+                background: white;
+            }
         }
     </style>
 </head>
-<body class="selection:bg-google-blue selection:text-white pb-12 relative">
+<body>
 
-    <div class="h-1.5 w-full flex sticky top-0 z-[60]">
-        <div class="flex-1 bg-google-blue"></div>
-        <div class="flex-1 bg-google-red"></div>
-        <div class="flex-1 bg-google-yellow"></div>
-        <div class="flex-1 bg-google-green"></div>
+    <div class="top-bar"></div>
+
+    <div class="container">
+        <header>
+            <h1>Candela Fava</h1>
+            <h2>Jefa del Departamento de Nómina | HR & Compensaciones</h2>
+            <div class="contact-info">
+                <!-- Enlace Mailto -->
+                <a href="mailto:candelafa@hotmail.com" class="contact-item">
+                    <span class="material-symbols-outlined">mail</span> candelafa@hotmail.com
+                </a>
+                <span class="contact-item"><span class="material-symbols-outlined">location_on</span> La Plata, Buenos Aires, Argentina</span>
+                <span class="contact-item"><span class="material-symbols-outlined">cake</span> 34 años</span>
+            </div>
+            
+            <div class="action-buttons">
+                <!-- Botón de Imprimir -->
+                <button onclick="window.print()" class="print-btn">
+                    <span class="material-symbols-outlined">print</span>
+                    Imprimir CV
+                </button>
+                
+                <!-- Botón de WhatsApp -->
+                <a href="https://wa.me/5492216126262" class="wa-btn" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                    Contáctame
+                </a>
+            </div>
+        </header>
+
+        <div class="card">
+            <span class="material-symbols-outlined card-icon-bg">person</span>
+            <div class="card-content">
+                <h3 class="section-title"><span class="material-symbols-outlined">account_circle</span> Perfil Profesional</h3>
+                <p>Especialista y líder en Recursos Humanos con un fuerte enfoque en operaciones de payroll y beneficios. Actualmente me desempeño como Jefa del Departamento de Nómina, liderando un equipo integral en la gestión de compensaciones, liquidación de haberes, administración de personal y beneficios corporativos.</p>
+                <p>Combino mi profundo conocimiento del negocio asegurador y las normativas laborales con un perfil altamente tecnológico: impulso la innovación del área mediante el uso de Inteligencia Artificial y automatizaciones. Mi objetivo es reingeniar los procesos tradicionales de HR, creando portales y flujos de trabajo más ágiles, escalables, eficientes y centrados en la experiencia del colaborador.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="material-symbols-outlined card-icon-bg">work</span>
+            <div class="card-content">
+                <h3 class="section-title"><span class="material-symbols-outlined">work_history</span> Experiencia Laboral</h3>
+                
+                <div class="company-name">Seguros Bernardino Rivadavia Coop. Ltda.</div>
+                <div class="job-title">Jefa del Departamento de Nómina</div>
+                <div class="job-duration">Trayectoria de más de 12 años en la compañía</div>
+                <p>Lidero estratégicamente el área y al equipo de nómina, teniendo a cargo las siguientes responsabilidades clave:</p>
+                
+                <ul>
+                    <li><span class="material-symbols-outlined bullet-icon">rocket_launch</span><strong>Innovación, Automatización y Mejora de Procesos (HR Tech):</strong> Rediseño y cambio de procesos implementando automatizaciones que reducen la carga operativa. Empleo herramientas de Inteligencia Artificial para la maquetación de portales internos en HTML.</li>
+                    <li><span class="material-symbols-outlined bullet-icon">payments</span><strong>Liquidación de Sueldos y CCT:</strong> Cálculo mensual, impuesto a las ganancias (4ª categoría), Libro de Sueldos Digital (LSD) ante AFIP y sugerencias de incrementos por CCT.</li>
+                    <li><span class="material-symbols-outlined bullet-icon">equalizer</span><strong>Compensaciones y Estructura Salarial:</strong> Política de remuneraciones, bandas salariales (Mercer IPE), análisis de equidad y participación en encuestas de mercado (Club Digital, Club de Seguros).</li>
+                    <li><span class="material-symbols-outlined bullet-icon">folder_shared</span><strong>Movimientos y Legajos Digitales:</strong> Onboarding, desvinculaciones (costos, indemnizaciones), implementación de firma digital y gestión de rotación en ADP.</li>
+                    <li><span class="material-symbols-outlined bullet-icon">calendar_month</span><strong>Licencias y Esquema Híbrido:</strong> Control de teletrabajo, gestión de licencias (vacaciones, ART, etc.) y seguimiento en Visma Time.</li>
+                    <li><span class="material-symbols-outlined bullet-icon">volunteer_activism</span><strong>Beneficios y Asesoramiento:</strong> Préstamos personales, trámites con obras sociales, agasajos y atención al cliente interno (Casilla RRHH).</li>
+                    <li><span class="material-symbols-outlined bullet-icon">bar_chart</span><strong>Informes y Gestión:</strong> Métricas y KPIs para Gerencia, órdenes de pago a proveedores y aplicación de la normativa legal (LCT).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="material-symbols-outlined card-icon-bg">build</span>
+            <div class="card-content">
+                <h3 class="section-title"><span class="material-symbols-outlined">construction</span> Herramientas y Tecnologías</h3>
+                <div class="skills-grid">
+                    <div class="skill-item" style="border-color: var(--google-blue);">Visma, ADP, Sistema de ARCA, LSD</div>
+                    <div class="skill-item" style="border-color: var(--google-red);">Mercer IPE (Compensaciones)</div>
+                    <div class="skill-item" style="border-color: var(--google-yellow);">Prompt Engineering (IA), HTML/CSS</div>
+                    <div class="skill-item" style="border-color: var(--google-green);">Excel Avanzado, KPIs y Datos</div>
+                </div>
+
+                <div class="google-workspace-box">
+                    <div class="gw-icons">
+                        <span class="material-symbols-outlined gw-icon gw-blue">description</span>
+                        <span class="material-symbols-outlined gw-icon gw-green">table_chart</span>
+                        <span class="material-symbols-outlined gw-icon gw-yellow">slideshow</span>
+                        <span class="material-symbols-outlined gw-icon gw-red">mail</span>
+                    </div>
+                    <div class="gw-text">
+                        <h4>Suite completa de Google Workspace</h4>
+                        <p>Desarrollo de automatizaciones a medida utilizando <strong>Google Apps Script</strong> para optimizar flujos de trabajo, gestión de datos y reportes de nómina.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="material-symbols-outlined card-icon-bg">school</span>
+            <div class="card-content">
+                <h3 class="section-title"><span class="material-symbols-outlined">school</span> Educación e Idiomas</h3>
+                <ul>
+                    <li><span class="material-symbols-outlined bullet-icon" style="color: var(--google-blue);">menu_book</span><strong>Contadora Pública</strong> - Universidad Nacional de La Plata (UNLP).</li>
+                    <li><span class="material-symbols-outlined bullet-icon" style="color: var(--google-red);">language</span><strong>Inglés:</strong> Nivel B1 (Intermedio).</li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-    <header class="bg-white/90 backdrop-blur-md border-b border-google-border pt-8 pb-6 px-4 sticky top-1.5 z-50 shadow-sm">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-6 relative">
-            
-            <!-- Avatar Ilustrado con borde gradiente -->
-            <div class="relative shrink-0">
-                <div class="w-24 h-24 rounded-full bg-white flex items-center justify-center text-4xl font-medium shadow-md border-4 border-transparent" style="background: linear-gradient(white, white) padding-box, linear-gradient(45deg, #1A73E8, #EA4335, #FBBC04, #34A853) border-box;">
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-google-blue to-google-red">C</span>
-                </div>
-                <div class="absolute -bottom-2 -right-2 bg-white rounded-full p-1.5 shadow-sm border border-google-border">
-                    <span class="material-symbols-outlined text-google-green text-[18px]">verified</span>
-                </div>
-            </div>
-            
-            <div class="flex-1 text-center md:text-left space-y-2 z-10">
-                <h1 class="text-3xl md:text-4xl font-medium text-google-text tracking-tight">Candela Fava</h1>
-                <p class="text-lg text-google-muted">Jefa del Departamento de Nómina <span class="text-google-border mx-1">|</span> HR & Compensaciones</p>
-                
-                <!-- Chips de información (Ilustrados) -->
-                <div class="flex flex-wrap justify-center md:justify-start gap-3 pt-3">
-                    <a href="mailto:cfava@segurosrivadavia.com" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-google-surface border border-google-border text-sm text-google-text hover:shadow-material transition-shadow group">
-                        <span class="material-symbols-outlined text-[20px] text-google-blue group-hover:scale-110 transition-transform">mail</span>
-                        cfava@segurosrivadavia.com
-                    </a>
-                    <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-google-surface border border-google-border text-sm text-google-text">
-                        <span class="material-symbols-outlined text-[20px] text-google-red">location_on</span>
-                        La Plata, Buenos Aires
-                    </div>
-                    <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-google-surface border border-google-border text-sm text-google-text">
-                        <span class="material-symbols-outlined text-[20px] text-google-yellow">cake</span>
-                        34 años
-                    </div>
-                    <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-google-surface border border-google-border text-sm text-google-text">
-                        <span class="material-symbols-outlined text-[20px] text-google-green">school</span>
-                        Contadora Pública
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main class="max-w-6xl mx-auto px-4 mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
-        
-        <div class="lg:col-span-8 space-y-8">
-            
-            <!-- Perfil Profesional Card (Ilustrado) -->
-            <section class="bg-white rounded-xl border border-google-border shadow-sm p-6 md:p-8 relative overflow-hidden group hover:shadow-material transition-shadow">
-                <!-- Marca de agua de fondo -->
-                <span class="material-symbols-outlined absolute -right-4 -bottom-8 text-[160px] text-google-surface select-none -rotate-12 z-0 group-hover:text-google-hover transition-colors duration-500">psychology</span>
-                
-                <div class="relative z-10">
-                    <div class="flex items-center gap-4 mb-5">
-                        <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-google-blue">
-                            <span class="material-symbols-outlined icon-filled text-2xl">person</span>
-                        </div>
-                        <h2 class="text-2xl font-medium text-google-text">Perfil Profesional</h2>
-                    </div>
-                    <p class="text-google-muted leading-relaxed mb-4 text-[15px]">
-                        Especialista y líder en Recursos Humanos con un fuerte enfoque en operaciones de payroll y beneficios. Actualmente me desempeño como <strong class="text-google-text">Jefa del Departamento de Nómina</strong>, liderando un equipo integral en la gestión de compensaciones, liquidación de haberes, administración de personal y beneficios corporativos.
-                    </p>
-                    <div class="bg-google-surface/50 border-l-4 border-google-blue p-4 rounded-r-lg mt-4">
-                        <p class="text-google-text leading-relaxed text-[15px] italic">
-                            "Combino mi profundo conocimiento del negocio asegurador y las normativas laborales con un <strong class="text-google-blue">perfil altamente tecnológico</strong>: impulso la innovación del área mediante el uso de Inteligencia Artificial y automatizaciones en Google Apps Script. Mi objetivo es reingeniar los procesos, creando portales más ágiles, escalables y centrados en la experiencia del colaborador, ideal para aportar valor estratégico en Allianz."
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experiencia Laboral Card (Ilustrada) -->
-            <section class="bg-white rounded-xl border border-google-border shadow-sm p-6 md:p-8 relative overflow-hidden">
-                <!-- Marca de agua de fondo -->
-                <span class="material-symbols-outlined absolute -right-6 top-10 text-[180px] text-google-surface select-none rotate-12 z-0">work_history</span>
-                
-                <div class="relative z-10">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-google-red">
-                            <span class="material-symbols-outlined icon-filled text-2xl">work</span>
-                        </div>
-                        <h2 class="text-2xl font-medium text-google-text">Experiencia Laboral</h2>
-                    </div>
-
-                    <div class="relative">
-                        <!-- Línea de Timeline -->
-                        <div class="absolute left-6 top-4 bottom-0 w-1 bg-google-surface rounded-full"></div>
-
-                        <div class="relative pl-16">
-                            <!-- Indicador de Timeline -->
-                            <div class="absolute left-3.5 top-2 w-6 h-6 rounded-full bg-white border-4 border-google-blue shadow-sm"></div>
-                            
-                            <h3 class="text-xl font-medium text-google-text">Seguros Bernardino Rivadavia Coop. Ltda.</h3>
-                            <div class="flex flex-wrap items-center gap-3 mt-2 mb-4 text-sm">
-                                <span class="font-medium text-google-text text-base">Jefa del Departamento de Nómina</span>
-                                <span class="text-google-muted">•</span>
-                                <span class="text-google-green font-medium bg-green-50 border border-green-200 px-3 py-1 rounded-full flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> Actualidad</span>
-                            </div>
-                            
-                            <!-- Box Destacado de trayectoria -->
-                            <div class="inline-flex items-center gap-3 bg-yellow-50/50 border border-google-yellow/30 rounded-xl px-4 py-3 mb-8 shadow-sm">
-                                <div class="bg-google-yellow rounded-full p-1.5 text-white">
-                                    <span class="material-symbols-outlined text-[20px]">workspace_premium</span>
-                                </div>
-                                <div>
-                                    <span class="block text-sm text-google-text font-medium">Trayectoria de 12 años en la compañía</span>
-                                    <span class="block text-xs text-google-muted">Demostrando compromiso y crecimiento continuo</span>
-                                </div>
-                            </div>
-
-                            <p class="text-google-text font-medium mb-6">Lidero estratégicamente el área y al equipo de nómina, con las siguientes responsabilidades:</p>
-                            
-                            <div class="space-y-4">
-                                <!-- Item 1 -->
-                                <div class="p-4 rounded-xl border border-google-border hover:shadow-material transition-all bg-white relative overflow-hidden group">
-                                    <div class="absolute top-0 left-0 w-1 h-full bg-google-blue"></div>
-                                    <div class="flex items-start gap-4">
-                                        <div class="mt-1 bg-blue-50 text-google-blue p-2 rounded-lg group-hover:scale-110 transition-transform">
-                                            <span class="material-symbols-outlined">lightbulb</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium text-google-text mb-2">1. Innovación, Automatización y Mejora de Procesos</h4>
-                                            <ul class="list-disc list-outside ml-5 text-sm text-google-muted space-y-1.5">
-                                                <li>Lidero el rediseño y cambio de procesos, implementando automatizaciones que reducen la carga operativa.</li>
-                                                <li>Desarrollo en <strong class="text-google-blue">Google Apps Script</strong> para flujos de trabajo.</li>
-                                                <li>Empleo de <strong class="text-google-blue">Inteligencia Artificial</strong> para maquetación HTML de portales.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Item 2 -->
-                                <div class="p-4 rounded-xl border border-google-border hover:shadow-material transition-all bg-white relative overflow-hidden group">
-                                    <div class="absolute top-0 left-0 w-1 h-full bg-google-green"></div>
-                                    <div class="flex items-start gap-4">
-                                        <div class="mt-1 bg-green-50 text-google-green p-2 rounded-lg group-hover:scale-110 transition-transform">
-                                            <span class="material-symbols-outlined">account_balance</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium text-google-text mb-2">2. Liquidación de Sueldos y CCT</h4>
-                                            <ul class="list-disc list-outside ml-5 text-sm text-google-muted space-y-1.5">
-                                                <li>Cálculo de sueldos, conceptos variables (guardería, plus vacacional).</li>
-                                                <li>Impuesto a las ganancias: Configuración de 4ª categoría / RAET.</li>
-                                                <li>Libro de Sueldos Digital (LSD): Presentación ante AFIP y rúbrica.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Item 3 -->
-                                <div class="p-4 rounded-xl border border-google-border hover:shadow-material transition-all bg-white relative overflow-hidden group">
-                                    <div class="absolute top-0 left-0 w-1 h-full bg-google-yellow"></div>
-                                    <div class="flex items-start gap-4">
-                                        <div class="mt-1 bg-yellow-50 text-google-yellow p-2 rounded-lg group-hover:scale-110 transition-transform">
-                                            <span class="material-symbols-outlined">trending_up</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium text-google-text mb-2">3. Compensaciones y Estructura Salarial</h4>
-                                            <ul class="list-disc list-outside ml-5 text-sm text-google-muted space-y-1.5">
-                                                <li>Armado de bandas salariales utilizando <strong class="text-google-text">Mercer IPE</strong>.</li>
-                                                <li>Análisis por cambios de puesto e incrementos fuera de pauta.</li>
-                                                <li>Representación en encuestas de mercado (Club Digital).</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Item 4 -->
-                                <div class="p-4 rounded-xl border border-google-border hover:shadow-material transition-all bg-white relative overflow-hidden group">
-                                    <div class="absolute top-0 left-0 w-1 h-full bg-google-red"></div>
-                                    <div class="flex items-start gap-4">
-                                        <div class="mt-1 bg-red-50 text-google-red p-2 rounded-lg group-hover:scale-110 transition-transform">
-                                            <span class="material-symbols-outlined">folder_shared</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium text-google-text mb-2">4. Movimientos, Legajos y Doc. Digital</h4>
-                                            <ul class="list-disc list-outside ml-5 text-sm text-google-muted space-y-1.5">
-                                                <li>Onboarding/Offboarding, cálculo de costos e indemnizaciones.</li>
-                                                <li>Implementación de formularios y <strong class="text-google-red">firma de documentos digitales</strong>.</li>
-                                                <li>Gestión de historial laboral en ADP.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Item 5 -->
-                                <div class="p-4 rounded-xl border border-google-border hover:shadow-material transition-all bg-white relative overflow-hidden group">
-                                    <div class="absolute top-0 left-0 w-1 h-full bg-google-blue"></div>
-                                    <div class="flex items-start gap-4">
-                                        <div class="mt-1 bg-blue-50 text-google-blue p-2 rounded-lg group-hover:scale-110 transition-transform">
-                                            <span class="material-symbols-outlined">home_work</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium text-google-text mb-2">5. Licencias, Asistencia y Esquema Híbrido</h4>
-                                            <ul class="list-disc list-outside ml-5 text-sm text-google-muted space-y-1.5">
-                                                <li>Monitoreo de esquemas híbridos y liquidación de gastos.</li>
-                                                <li>Otorgamiento de licencias (vacaciones, maternidad, ART).</li>
-                                                <li>Configuración de marcas en Visma Time.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div class="lg:col-span-4 space-y-8">
-            
-            <!-- Herramientas Card (Ilustrada + Google Workspace) -->
-            <section class="bg-white rounded-xl border border-google-border shadow-sm p-6 relative overflow-hidden">
-                <!-- Marca de agua -->
-                <span class="material-symbols-outlined absolute -right-8 -bottom-8 text-[140px] text-google-surface select-none -rotate-12 z-0">construction</span>
-                
-                <div class="relative z-10">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-full bg-yellow-50 flex items-center justify-center text-google-yellow">
-                            <span class="material-symbols-outlined icon-filled text-2xl">build</span>
-                        </div>
-                        <h2 class="text-xl font-medium text-google-text">Herramientas</h2>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        
-                        <div>
-                            <h3 class="text-[11px] font-bold text-google-muted uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                                <span class="material-symbols-outlined text-[16px]">cloud</span> Productividad & Suite
-                            </h3>
-                            <div class="flex flex-col gap-2">
-                                <div class="px-4 py-2.5 rounded-lg bg-white border border-google-border shadow-sm flex items-center gap-3 hover:border-google-blue transition-colors group cursor-default">
-                                    <!-- Ícono estilo logo de Google Workspace -->
-                                    <div class="grid grid-cols-2 gap-[2px] w-5 h-5 transform rotate-45 shrink-0 group-hover:rotate-90 transition-transform duration-500">
-                                        <div class="bg-google-blue rounded-sm"></div>
-                                        <div class="bg-google-red rounded-sm"></div>
-                                        <div class="bg-google-yellow rounded-sm"></div>
-                                        <div class="bg-google-green rounded-sm"></div>
-                                    </div>
-                                    <span class="font-medium text-google-text text-sm">Suite completa de Google</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 class="text-[11px] font-bold text-google-muted uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                                <span class="material-symbols-outlined text-[16px]">payments</span> Gestión de Nómina
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 bg-google-surface border border-google-border text-google-text rounded-lg text-sm flex items-center gap-1 hover:bg-google-hover transition-colors"><span class="material-symbols-outlined text-[14px] text-google-muted">check_circle</span> Visma</span>
-                                <span class="px-3 py-1.5 bg-google-surface border border-google-border text-google-text rounded-lg text-sm flex items-center gap-1 hover:bg-google-hover transition-colors"><span class="material-symbols-outlined text-[14px] text-google-muted">check_circle</span> ADP</span>
-                                <span class="px-3 py-1.5 bg-google-surface border border-google-border text-google-text rounded-lg text-sm flex items-center gap-1 hover:bg-google-hover transition-colors"><span class="material-symbols-outlined text-[14px] text-google-muted">check_circle</span> Sist. ARCA</span>
-                                <span class="px-3 py-1.5 bg-google-surface border border-google-border text-google-text rounded-lg text-sm flex items-center gap-1 hover:bg-google-hover transition-colors"><span class="material-symbols-outlined text-[14px] text-google-muted">check_circle</span> LSD (AFIP)</span>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-[11px] font-bold text-google-muted uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                                <span class="material-symbols-outlined text-[16px]">balance</span> Compensaciones
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 bg-yellow-50 border border-yellow-200 text-yellow-800 rounded-lg text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">star</span> Mercer IPE</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 class="text-[11px] font-bold text-google-muted uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                                <span class="material-symbols-outlined text-[16px]">code</span> HR Tech & Desarrollo
-                            </h3>
-                            <div class="flex flex-col gap-2">
-                                <span class="px-4 py-2 bg-blue-50 border border-blue-200 text-google-blue rounded-lg text-sm flex items-center gap-2 font-medium shadow-sm">
-                                    <span class="material-symbols-outlined text-[18px]">terminal</span> Google Apps Script
-                                </span>
-                                <span class="px-4 py-2 bg-blue-50 border border-blue-200 text-google-blue rounded-lg text-sm flex items-center gap-2 font-medium shadow-sm">
-                                    <span class="material-symbols-outlined text-[18px]">smart_toy</span> Prompt Eng. (IA)
-                                </span>
-                                <span class="px-4 py-2 bg-blue-50 border border-blue-200 text-google-blue rounded-lg text-sm flex items-center gap-2 font-medium shadow-sm">
-                                    <span class="material-symbols-outlined text-[18px]">html</span> HTML/CSS
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Educación Card -->
-            <section class="bg-white rounded-xl border border-google-border shadow-sm p-6 relative overflow-hidden">
-                <span class="material-symbols-outlined absolute -right-4 -bottom-4 text-[100px] text-google-surface select-none -rotate-12 z-0">school</span>
-                <div class="relative z-10">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-google-green">
-                            <span class="material-symbols-outlined icon-filled">school</span>
-                        </div>
-                        <h2 class="text-xl font-medium text-google-text">Educación</h2>
-                    </div>
-                    <div class="bg-google-surface border border-google-border p-4 rounded-lg">
-                        <h3 class="font-medium text-google-text">Contadora Pública</h3>
-                        <p class="text-sm text-google-muted mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">account_balance</span> UNLP</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Idiomas Card -->
-            <section class="bg-white rounded-xl border border-google-border shadow-sm p-6 relative overflow-hidden">
-                <span class="material-symbols-outlined absolute -right-4 -bottom-4 text-[100px] text-google-surface select-none -rotate-12 z-0">language</span>
-                <div class="relative z-10">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-google-red">
-                            <span class="material-symbols-outlined icon-filled">language</span>
-                        </div>
-                        <h2 class="text-xl font-medium text-google-text">Idiomas</h2>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="font-medium text-google-text flex items-center gap-2">Inglés</h3>
-                            <span class="text-xs font-bold text-google-blue bg-blue-50 px-2 py-1 rounded-md border border-blue-100">B1 Intermedio</span>
-                        </div>
-                        <div class="w-full bg-google-surface rounded-full h-2 overflow-hidden border border-google-border">
-                            <div class="bg-gradient-to-r from-google-blue to-blue-400 h-2 rounded-full" style="width: 50%"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="max-w-6xl mx-auto px-4 mt-12 mb-6 flex flex-col md:flex-row items-center justify-between text-xs text-google-muted border-t border-google-border pt-6 relative z-10">
-        <p class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">description</span> Curriculum Vitae • Candela Fava</p>
-        <div class="flex gap-4 mt-3 md:mt-0">
-            <span class="hover:text-google-text cursor-pointer transition-colors">Privacidad y Confidencialidad</span>
-            <span><script>document.write(new Date().getFullYear())</script></span>
-        </div>
-    </footer>
 
 </body>
 </html>
