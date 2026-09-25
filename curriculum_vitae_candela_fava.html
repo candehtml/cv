@@ -30,6 +30,9 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            /* Esta línea fuerza a los navegadores a respetar los colores de fondo */
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
 
         .top-bar {
@@ -276,17 +279,16 @@
         }
 
         /* =========================================
-           CONFIGURACIÓN ESPECIAL PARA IMPRESIÓN 
+           CONFIGURACIÓN ESPECIAL PARA IMPRESIÓN / PDF
            ========================================= */
         @media print {
             body {
-                background: white;
-                background-image: none; /* Quita el patrón de puntos */
-                color: black;
+                background-color: var(--bg-color) !important;
             }
             
-            .top-bar, .action-buttons, .card-icon-bg {
-                display: none !important; /* Oculta botones y elementos decorativos grandes */
+            /* Oculta los botones interactivos */
+            .action-buttons {
+                display: none !important; 
             }
 
             .container {
@@ -296,21 +298,8 @@
             }
 
             .card {
-                box-shadow: none; /* Quita sombras */
-                border: 1px solid #ddd; /* Pone un borde fino para separar */
-                padding: 20px;
-                margin-bottom: 15px;
                 page-break-inside: avoid; /* Evita que una tarjeta se corte a la mitad de la hoja */
-            }
-
-            .skill-item {
-                border: 1px solid #ddd;
-                border-left: 4px solid var(--google-green);
-            }
-
-            .job-duration {
-                border: 1px solid var(--google-blue);
-                background: white;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12) !important;
             }
         }
     </style>
@@ -324,7 +313,6 @@
             <h1>Candela Fava</h1>
             <h2>Jefa del Departamento de Nómina | HR & Compensaciones</h2>
             <div class="contact-info">
-                <!-- Enlace Mailto -->
                 <a href="mailto:candelafa@hotmail.com" class="contact-item">
                     <span class="material-symbols-outlined">mail</span> candelafa@hotmail.com
                 </a>
@@ -336,7 +324,7 @@
                 <!-- Botón de Imprimir -->
                 <button onclick="window.print()" class="print-btn">
                     <span class="material-symbols-outlined">print</span>
-                    Imprimir CV
+                    Guardar PDF
                 </button>
                 
                 <!-- Botón de WhatsApp -->
